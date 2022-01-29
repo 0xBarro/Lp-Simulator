@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>A Basic HTML5 Template</title>
+  <title>Liquity Pool Simulator</title>
   <meta name="description" content="Simulating the behaviour of a liquidity pool">
   <meta name="author" content="0xBarro">
 
@@ -19,8 +19,10 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
 
+  <link rel="stylesheet" href="style.css">
+
   <!-- Call the main script -->
-  <script src="lp.js"></script>
+  <script src="scripts/lp.js"></script>
   
   <!-- Call Chart JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -28,8 +30,32 @@
 </head>
 <body>
     <h1>Liquidity Pool Simulator</h1>
-    <canvas id="myChart" width="400" height="400"></canvas>
 
-    <script>createChart()</script>
+    <div class='container'>
+        <div className='plot'>
+            <canvas id="myChart" width="600" height="600"></canvas>
+        </div>
+        <div className='form'>
+            <form>
+                <h3>Asset A</h3>
+                <label for="assetANT">Asset A Number Tokens:</label><br>
+                <input type="number" id="assetANT" name="assetANT" value=100><br>
+
+                <label for="assetAUP">Asset A Token Unit Price:</label><br>
+                <input type="number" id="assetAUP" name="assetAUP" value=100><br>
+
+                <h3>Asset B</h3>
+                <label for="assetBNT">Asset B Number Tokens </label><br>
+                <input type="number" id="assetBNT" name="assetBNT" value=200><br>
+
+                <label for="assetBUP">Asset B Token Unit Price:</label><br> 
+                <input type="number" id="assetBUP" name="assetBUP" value=50><br>
+
+              </form>
+        </div>
+    </div>
+    
+
+    <script>drawChart()</script>
 </body>
 </html>
