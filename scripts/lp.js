@@ -1,3 +1,6 @@
+let chart = undefined;
+
+
 const createChart = (nA, vA, nB, vB) => {
   console.log(nA, vA)
     const labels = [
@@ -9,8 +12,8 @@ const createChart = (nA, vA, nB, vB) => {
         labels: labels,
         datasets: [{
           label: 'LP Token Balance',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
+          borderColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
           data: [nA * vA, nB * vB],
         }]
       };
@@ -21,7 +24,7 @@ const createChart = (nA, vA, nB, vB) => {
         options: {}
       };
     
-      const myChart = new Chart(
+        chart = new Chart(
       document.getElementById('myChart'),
       config
     );
@@ -47,4 +50,8 @@ const getValues = () => {
 
   console.log("Current Value are: ", formValues)
   return formValues
+}
+
+ const updateChart = () => {
+  const formValues = getValues();
 }
