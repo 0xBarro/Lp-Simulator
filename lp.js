@@ -15,7 +15,7 @@ const createChart = () => {
       label: 'LP Token Balance',
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
       borderColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
-      data: values.data,
+      data: [values.nA, values.nB],
     }]
   };
 
