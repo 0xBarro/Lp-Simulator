@@ -78,8 +78,10 @@ const swap = (update) => {
 
 }
 
-const invsereSwap = () => {
-  buyToken, sellToken = sellToken, buyToken
+const inverseSwap = () => {
+  const _buyToken = buyToken
+  buyToken  = sellToken
+  sellToken = _buyToken
   
   // Update the tags
   fillTokenNames()
