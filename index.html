@@ -1,15 +1,16 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Liquity Pool Simulator</title>
-  <meta name="description" content="Simulating the behaviour of a liquidity pool">
-  <meta name="author" content="0xBarro">
+    <title>Liquity Pool Simulator</title>
+    <meta name="description" content="Simulating the behaviour of a liquidity pool">
+    <meta name="author" content="0xBarro">
 
-  <!-- <meta property="og:title" content="A Basic HTML5 Template">
+    <!-- <meta property="og:title" content="A Basic HTML5 Template">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
   <meta property="og:description" content="A simple HTML5 Template for new projects.">
@@ -19,23 +20,25 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Call the main script -->
-  <script src="lp.js"></script>
-  
-  <!-- Call Chart JS -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Call the main script -->
+    <script src="lp.js"></script>
+
+    <!-- Call Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+
 <body>
     <h1>Liquidity Pool Simulator</h1>
 
     <div class='container'>
-        <div className='plot'>
+        <div class='column'>
             <canvas id="myChart" width="600" height="600"></canvas>
         </div>
-        <div className='form'>
+        <div class='form column'>
+            <h3> Tokens Prices </h3>
             <form onchange="updateChart()">
                 <h3>Asset A</h3>
                 <label for="assetANT">Asset A Number Tokens:</label><br>
@@ -48,14 +51,33 @@
                 <label for="assetBNT">Asset B Number Tokens </label><br>
                 <input type="number" id="assetBNT" name="assetBNT" value=200><br>
 
-                <label for="assetBUP">Asset B Token Unit Price:</label><br> 
+                <label for="assetBUP">Asset B Token Unit Price:</label><br>
                 <input type="number" id="assetBUP" name="assetBUP" value=50><br>
 
-              </form>
+            </form>
         </div>
+
+        <div class="column">
+
+            <h3> Swap </h3>
+            <form>
+                <label for="a">Asset A</label><br>
+                <input type="radio" id="a" name="ts"><br>
+                <label for="b">Asset B</label><br>
+                <input type="radio" id="b" name="ts"><br>
+
+                <label for="amount">Amount to Swap</label><br>
+                <input type="number" id="amount" value=0><br>
+
+                <input type="submit" value="Swap">
+            </form>
+
+        </div>
+
     </div>
-    
+
 
     <script>createChart()</script>
 </body>
+
 </html>
