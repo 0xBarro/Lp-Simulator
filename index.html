@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- Call the main script -->
-  <script src="scripts/lp.js"></script>
+  <script src="lp.js"></script>
   
   <!-- Call Chart JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -36,7 +36,7 @@
             <canvas id="myChart" width="600" height="600"></canvas>
         </div>
         <div className='form'>
-            <form>
+            <form onchange="updateChart()">
                 <h3>Asset A</h3>
                 <label for="assetANT">Asset A Number Tokens:</label><br>
                 <input type="number" id="assetANT" name="assetANT" value=100><br>
@@ -56,6 +56,6 @@
     </div>
     
 
-    <script>drawChart()</script>
+    <script>createChart()</script>
 </body>
 </html>

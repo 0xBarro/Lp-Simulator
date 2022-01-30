@@ -1,8 +1,11 @@
 let chart = undefined;
 
 
-const createChart = (nA, vA, nB, vB) => {
-  console.log(nA, vA)
+const createChart = () => {
+
+    values = getValues()
+    console.log(values, values.data)
+
     const labels = [
         'Asset A',
         'Asset B',
@@ -14,7 +17,7 @@ const createChart = (nA, vA, nB, vB) => {
           label: 'LP Token Balance',
           backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
           borderColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
-          data: [nA * vA, nB * vB],
+          data: values.data,
         }]
       };
     
@@ -35,23 +38,22 @@ const balancePool = () => {
   const a = 1;
 }
 
-const drawChart = () => {
-  const formValues = getValues();
-  createChart(formValues.nA, formValues.vA, formValues.nB, formValues.vB)
-}
-
 const getValues = () => {
-  const formValues = {
+  return {
     nA: +document.getElementById("assetANT").value,
-    vA: +document.getElementById("assetAUP").value,
+    upA: +document.getElementById("assetAUP").value,
     nB: +document.getElementById("assetBNT").value,
-    vB: +document.getElementById("assetBUP").value
+    upB: +document.getElementById("assetBUP").value,
+    get vA() {return this.nA * this.upA},
+    get vB() {return this.nB * this.upB},
+    get data() {return [this.vA, this.vB]}
   }
-
-  console.log("Current Value are: ", formValues)
-  return formValues
 }
 
  const updateChart = () => {
-  const formValues = getValues();
+  const formValues = getValues()
+
+  // Update Charts
+  chart.data.datasets[0].data = formValues.data
+  chart.update()
 }
