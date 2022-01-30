@@ -10,5 +10,10 @@
 }
 
 body {
+    font-family: Arial, Geneva, Helvetica, sans-serif;
     max-height: 1px;
+}
+
+#sellAmount {
+    width: 50px;
 }
