@@ -2,7 +2,6 @@
 const createChart = () => {
 
   values = getValues()
-  console.log(values, values.data)
 
   const labels = [
     'Asset A',
@@ -15,7 +14,7 @@ const createChart = () => {
       label: 'LP Token Balance',
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
       borderColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
-      data: [values.nA, values.nB],
+      data: values.nTokensData,
     }]
   };
 
@@ -37,7 +36,8 @@ const getValues = () => {
     upB: +document.getElementById("assetBUP").value,
     get vA() { return this.nA * this.upA },
     get vB() { return this.nB * this.upB },
-    get data() { return [this.vA, this.vB] }
+    get data() { return [this.vA, this.vB] },
+    get nTokensData() {return [this.nA, this.nB]}
   }
 }
 
@@ -45,14 +45,14 @@ const getValues = () => {
 const updateChart = () => {
 
   // Update Charts
-  chart.data.datasets[0].data = getValues().data
+  chart.data.datasets[0].data = getValues().nTokensData
   chart.update()
 }
 
 const swapConst = (nA, nB, sellAmountA) => {
   const k = nA * nB
   const tokensReturned =  nB - (k/(nA + sellAmountA))
-  console.log(nA, nB, sellAmountA, k, tokensReturned)
+
   return tokensReturned
 }
 
