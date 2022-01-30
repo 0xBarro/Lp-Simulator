@@ -17,3 +17,7 @@ body {
 #sellAmount {
     width: 50px;
 }
+
+span {
+    margin: 1px 5px;
+}

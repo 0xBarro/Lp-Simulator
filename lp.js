@@ -57,7 +57,7 @@ const swapConst = (nA, nB, sellAmountA) => {
 }
 
 // Adjusts the pool based on the selected swap mode
-const swap = () => {
+const swap = (update) => {
 
   const buyTokenPoolAmount = +document.getElementById(buyToken + "NT").value
   const sellTokenPoolAmount = +document.getElementById(sellToken + "NT").value
@@ -65,12 +65,17 @@ const swap = () => {
 
   const boughtAmount = poolModes[poolMode](sellTokenPoolAmount, buyTokenPoolAmount, sellAmount)
 
-  // Update quantities in the pool
-  document.getElementById(buyToken + "NT").value = buyTokenPoolAmount - boughtAmount
-  document.getElementById(sellToken + "NT").value = sellTokenPoolAmount + sellAmount
+  if (update) {
+    // Update quantities in the pool
+    document.getElementById(buyToken + "NT").value = buyTokenPoolAmount - boughtAmount
+    document.getElementById(sellToken + "NT").value = sellTokenPoolAmount + sellAmount
 
-  // Update the chart
-  updateChart()
+    // Update the chart
+    updateChart()
+  } else {
+    document.getElementById("buyAmount").innerText = boughtAmount
+  }
+
 }
 
 const invsereSwap = () => {
@@ -89,6 +94,7 @@ const fillTokenNames = () => {
 const init = () => {
   createChart() // Draw the plot
   fillTokenNames()
+  swap()
 }
 
 

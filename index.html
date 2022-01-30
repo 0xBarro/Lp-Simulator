@@ -60,9 +60,11 @@
         <div class="column">
 
             <h3> Token Swap </h3>  
-            <input type='number' min=0 value=1 id="sellAmount" onchange=""><span id="sellToken"></span> => <span id="buyToken"></span><span id="buyAmount"></span> <br> 
+            <span id="sellToken"></span><input type='number' min=0 value=1 id="sellAmount" onchange="swap()"> <br>
+            <p>To</p> 
+            <span id="buyToken"></span><span id="buyAmount"></span> <br> 
 
-            <button onclick="swap()"> Swap </button>
+            <button onclick="swap(true)"> Swap </button>
 
         </div>
 
