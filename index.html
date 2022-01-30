@@ -42,17 +42,17 @@
             <form onchange="updateChart()">
                 <h3>Asset A</h3>
                 <label for="assetANT">Asset A Number Tokens:</label><br>
-                <input type="number" id="assetANT" name="assetANT" value=100><br>
+                <input type="number" id="assetANT" name="assetANT" value=100 min=0><br>
 
                 <label for="assetAUP">Asset A Token Unit Price:</label><br>
-                <input type="number" id="assetAUP" name="assetAUP" value=100><br>
+                <input type="number" id="assetAUP" name="assetAUP" value=100  min=0><br>
 
                 <h3>Asset B</h3>
                 <label for="assetBNT">Asset B Number Tokens </label><br>
-                <input type="number" id="assetBNT" name="assetBNT" value=200><br>
+                <input type="number" id="assetBNT" name="assetBNT" value=200  min=0><br>
 
                 <label for="assetBUP">Asset B Token Unit Price:</label><br>
-                <input type="number" id="assetBUP" name="assetBUP" value=50><br>
+                <input type="number" id="assetBUP" name="assetBUP" value=50 min=0 ><br>
 
             </form>
         </div>
@@ -67,10 +67,10 @@
                 <input type="radio" id="b" name="ts"><br>
 
                 <label for="amount">Amount to Swap</label><br>
-                <input type="number" id="amount" value=0><br>
-
-                <input type="submit" value="Swap">
+                <input type="number" id="amount" value=0 min=0><br>
+  
             </form>
+            <button onclick="swap()"> Swap </button>
 
         </div>
 

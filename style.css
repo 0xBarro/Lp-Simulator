@@ -8,3 +8,7 @@
     margin: 100px;
     background-color: aquamarine;
 }
+
+body {
+    max-height: 1px;
+}
