@@ -88,8 +88,8 @@ const inverseSwap = () => {
 }
 
 const fillTokenNames = () => {
-  document.getElementById("sellToken").innerText = sellToken
-  document.getElementById("buyToken").innerText = buyToken
+  document.getElementById("sellToken").innerText = assetNames[sellToken]
+  document.getElementById("buyToken").innerText = assetNames[buyToken]
 }
 
 // Called when starting the page
@@ -110,3 +110,10 @@ const poolModes = {
 let poolMode = "constant"
 let buyToken = "assetA"
 let sellToken  = "assetB"
+
+const  assetNames = {
+  assetA: "Asset A",
+  assetB: "Asset B"
+}
+
+// Set Hooks
