@@ -31,40 +31,47 @@
 </head>
 
 <body>
-    <h1>Liquidity Pool Simulator</h1>
+    <h1><a href="/">Liquidity Pool Simulator</a></h1>
 
-    <p> This app is a  </p>
+    <div class="container">
+        <button> <a class="nav" href="/pricing_models.html">Pricing Mechanism Comparison</a> </button>
+        <button> <a class="nav" href="/references.html"> Concepts and References</a> </button>
+    </div>
 
     <div class='container'>
         <div class='column'>
+            <h3> Pool Token Share <span class='explanation'></span></h3>
+            <p> Graph showing the token distribution within the pool.</p>
             <canvas id="myChart" width="600" height="600"></canvas>
         </div>
         <div class='form column'>
-            <h3> Tokens Prices </h3>
+            <h3> Tokens Prices <span class='explanation'></span></h3>
             <form onchange="updateChart()">
                 <h3>Asset A</h3>
                 <label for="assetANT">Asset A Number Tokens:</label><br>
                 <input type="number" id="assetANT" name="assetANT" value=100 min=0><br>
 
                 <label for="assetAUP">Asset A Market Unit Price:</label><br>
-                <input type="number" id="assetAUP" name="assetAUP" value=100  min=0><br>
+                <input type="number" id="assetAUP" name="assetAUP" value=100 min=0><br>
 
                 <h3>Asset B</h3>
                 <label for="assetBNT">Asset B Number Tokens </label><br>
-                <input type="number" id="assetBNT" name="assetBNT" value=200  min=0><br>
+                <input type="number" id="assetBNT" name="assetBNT" value=200 min=0><br>
 
                 <label for="assetBUP">Asset B Market Unit Price:</label><br>
-                <input type="number" id="assetBUP" name="assetBUP" value=50 min=0 ><br>
+                <input type="number" id="assetBUP" name="assetBUP" value=50 min=0><br>
 
             </form>
         </div>
 
         <div class="column">
 
-            <h3> Token Swap </h3>  
-            <span id="sellToken"></span><input type='number' min=0 value=1 id="sellAmount" onchange="swap()"> <br>
-            <p>To</p> 
-            <span id="buyToken"></span><span id="buyAmount"></span> <br> 
+            <h3> Token Swap <span class='explanation'></span> </h3>
+            <p> To perform a swap, indicate how many tokens from an asset you want to sell for the other asset. This will calculate how many tokens you will get back and the corresponding price impact. </p>
+
+            Sell <span id="sellToken"></span><input type='number' min=0 value=1 id="sellAmount" onchange="swap()"> <br>
+            <p>To</p>
+            <span id="buyToken"></span><span id="buyAmount"></span> <br>
 
             <button onclick="inverseSwap()"> Reverse </button>
             <button onclick="swap(true)"> Swap </button>

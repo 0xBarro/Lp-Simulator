@@ -21,3 +21,19 @@ body {
 span {
     margin: 1px 5px;
 }
+
+.nav{
+    margin: 5px;
+}
+
+button {
+    margin: 5px;
+}
+
+.explanation::after {
+    content: "(?)";
+}
+
+.explanation:hover {
+    background-color: brown;
+}
