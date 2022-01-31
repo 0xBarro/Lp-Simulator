@@ -34,44 +34,53 @@
     <h1><a href="/Lp-Simulator">Liquidity Pool Simulator</a></h1>
 
     <div class="container">
-        <button> <a class="nav" href="Lp-Simulator/pricing_models.html">Pricing Mechanism Comparison</a> </button>
-        <button> <a class="nav" href="Lp-Simulator/references.html"> Concepts and References</a> </button>
+        <a class="nav" href="Lp-Simulator/pricing_models.html"> <button> Pricing Mechanism Comparison</button></a>
+        <a class="nav" href="Lp-Simulator/references.html"> <button> Concepts and References </button> </a>
     </div>
 
     <div class='container'>
         <div class='column'>
-            <h3> Pool Token Share</h3>
-            <span class='explanation'>
-                <div class="tooltip">
-                    This graph shows how many tokens of each asset are in the pool. This is updated automatically as changes to the pool's parameters or swaps are made.
-                </div>
-            </span>
 
-            <p> Graph showing the token distribution within the pool.</p>
+            <div class="eq-space">
+                <h3> Pool Token Share</h3>
+                <span class='explanation'>
+                    <div class="tooltip">
+                        This graph shows how many tokens of each asset are in the pool. This is updated automatically as
+                        changes to the pool's parameters or swaps are made.
+                    </div>
+                </span>
+            </div>
+
             <canvas id="myChart" width="600" height="600"></canvas>
         </div>
         <div class='form column'>
-            <h3> Tokens Prices</h3>
-            <span class='explanation'>
-                <div class="tooltip">
-                    Here you can tweak the pools paramters, by adjusting how much of each asset is in the pool and what is the market price for each token. <br>
-                    The market price does not alter the pools behaviour, it's just for reference when calculating price impact.
-                </div>
-            </span>
+            <div class="eq-space">
+                <h3> Tokens Prices</h3>
+                <span class='explanation'>
+                    <div class="tooltip">
+                        Here you can tweak the pools paramters, by adjusting how much of each asset is in the pool and
+                        what is the market price for each token. <br>
+                        The market price does not alter the pools behaviour, it's just for reference when calculating
+                        price impac
+                    </div>
+                </span>
+            </div>
+
 
             <form onchange="updateChart()">
-                <h3>Asset A</h3>
-                <label for="assetANT">Asset A Number Tokens:</label><br>
+                <h3>Asset A</h3><br>
+
+                <label for="assetANT">Number Tokens in Pool:</label><br>
                 <input type="number" id="assetANT" name="assetANT" value=100 min=0><br>
 
-                <label for="assetAUP">Asset A Market Unit Price:</label><br>
+                <label for="assetAUP"> Market Unit Price ($):</label><br>
                 <input type="number" id="assetAUP" name="assetAUP" value=100 min=0><br>
 
-                <h3>Asset B</h3>
-                <label for="assetBNT">Asset B Number Tokens </label><br>
+                <h3>Asset B</h3><br>
+                <label for="assetBNT">Number Tokens in Pool</label><br>
                 <input type="number" id="assetBNT" name="assetBNT" value=200 min=0><br>
 
-                <label for="assetBUP">Asset B Market Unit Price:</label><br>
+                <label for="assetBUP">Market Unit Price ($):</label><br>
                 <input type="number" id="assetBUP" name="assetBUP" value=50 min=0><br>
 
             </form>
@@ -79,22 +88,38 @@
 
         <div class="column">
 
-            <h3> Token Swap </h3>
-            <span class='explanation'>
-                <div class="tooltip">
-                    To perform a swap, simply indicate how much of the token you want to sell in exchange for the other asset. The amount each asset in your personal wallet is irrelevant for this simulation, and it is always assumed that you have enough tokens to sell.
-                    <br>
-                    Press the SWAP to perform a swap and press the REVERSE button to switch the transaction direction. <br>
-                    Price impact will be automatically calculated below. 
-                </div>
-            </span> <br>
-        
-            <span id="sellToken"></span><input type='number' min=0 value=1 id="sellAmount" onchange="swap()"> <br>
+            <div class="eq-space">
+                <h3> Token Swap </h3>
+                <span class='explanation'>
+                    <div class="tooltip">
+                        To perform a swap, simply indicate how much of the token you want to sell in exchange for the
+                        other
+                        asset. The amount each asset in your personal wallet is irrelevant for this simulation, and it
+                        is
+                        always assumed that you have enough tokens to sell.
+                        <br>
+                        Press the SWAP to perform a swap and press the REVERSE button to switch the transaction
+                        direction.
+                        <br>
+                        Price impact will be automatically calculated below.
+                    </div>
+                </span>
+            </div>
+
+            <div>
+                <span id="sellToken"></span><input type='number' min=0 value=1 id="sellAmount" onchange="swap()"> <br>
+            </div>
+            
             <p id='arrow'>&#x21CA</p>
-            <span id="buyToken"></span><span id="buyAmount"></span> <br>
+
+            <div>
+                <span id="buyToken"></span><span id="buyAmount"></span> <br>
+            </div>
+            
 
             <button onclick="inverseSwap()"> Reverse </button>
             <button onclick="swap(true)"> Swap </button>
+
 
         </div>
 

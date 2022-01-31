@@ -6,12 +6,15 @@
 .column {
     width: 20%;
     margin: 100px;
-    background-color: aquamarine;
+    background-color: gainsboro;
+    padding: 0px 5px;
+    border-radius: 20px;
 }
 
 body {
     font-family: Arial, Geneva, Helvetica, sans-serif;
-    max-height: 1px;
+    width: 80%;
+    margin: auto;
 }
 
 #sellAmount {
@@ -61,10 +64,25 @@ button {
 
 h3 {
     display: inline-block;
+    margin: 5px;
 }
 
 #arrow {
     text-align: center;
     margin: 10px auto;
     font-size: xx-large;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+  }
+
+.eq-space {
+    justify-content: space-between;
+    display: flex;
+    margin: 5px;
 }
